@@ -1,0 +1,93 @@
+h1 {
+  font-size: 80px;
+}
+h3 {
+  text-align: center;
+}
+i {
+  margin: 10px auto;
+  font-size: 30px;
+}
+img {
+  width: 475px;
+  display: block;
+  margin: 0 auto;
+}
+hr {
+  border-top: 5px solid #323235;
+}
+footer {
+  margin: 10px 0 20px;
+  text-align: center;
+}
+p {
+  font-size: 30px;
+  font-weight: bolder;
+}
+.container {
+  display: block;
+  margin: 0 auto;
+}
+.border {
+  background: radial-gradient(
+    328px at 2.9% 15%,
+    rgb(191, 224, 251) 0%,
+    rgb(232, 233, 251) 25.8%,
+    rgb(252, 239, 250) 50.8%,
+    rgb(234, 251, 251) 77.6%,
+    rgb(240, 251, 244) 100.7%
+  );
+}
+.dateTime {
+  padding: 30px 0 0;
+  margin: 0 auto;
+  font-size: 40px;
+}
+#dateTimePlace {
+  text-align: center;
+}
+.main-temperature {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 100px;
+}
+.cf {
+  margin-top: 20px;
+  text-align: right;
+}
+.vl {
+  border-left: 3px solid #323235;
+  height: 80px;
+}
+.vl-longer {
+  border-left: 3px solid #323235;
+  height: 550px;
+}
+.col {
+  text-align: center;
+}
+.main {
+  display: block;
+  text-align: center;
+  font-size: 175px;
+  color: aliceblue;
+  background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  border: 3px solid none;
+  border-radius: 700px;
+  padding: 50px;
+  margin: 30px 0 10px;
+}
+.days {
+  background: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  border: 3px solid none;
+  border-radius: 30px;
+  margin: 10px;
+}
+.weekDay {
+  font-size: 30px;
+}
+.dayTemp {
+  font-weight: bolder;
+  font-size: 20px;
+}
