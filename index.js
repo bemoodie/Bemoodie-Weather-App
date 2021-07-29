@@ -17,7 +17,7 @@ function formatDate(todaysDate) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let day = days[now.getDay()];
 
@@ -33,7 +33,7 @@ function formatDate(todaysDate) {
     "Sep",
     "Oct",
     "Nov",
-    "Dec"
+    "Dec",
   ];
   let month = months[now.getMonth()];
 
