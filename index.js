@@ -41,6 +41,8 @@ function formatDate(todaysDate) {
 }
 
 function showWeather(response) {
+  let iconElement = document.querySelector("#icon");
+
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#tempElement").innerHTML = Math.round(
     response.data.main.temp
@@ -49,6 +51,10 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(city) {
