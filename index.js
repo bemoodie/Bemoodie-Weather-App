@@ -43,6 +43,8 @@ function formatDate(todaysDate) {
 function showWeather(response) {
   let iconElement = document.querySelector("#icon");
 
+  celsiusTemp = response.data.main.temp;
+
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#tempElement").innerHTML = Math.round(
     response.data.main.temp
@@ -59,7 +61,7 @@ function showWeather(response) {
 
 function search(city) {
   let apiKey = "70ac119e9673d8efaba7774f355454f6";
-  let units = "imperial";
+  let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeather);
 }
@@ -94,23 +96,30 @@ function showCurrentLoaction(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function celDegrees(event) {
-  event.preventDefault();
-  let mTemp = document.querySelector(".main-temperature");
-  mTemp.innerHTML = "22°";
-}
-
-let cDegrees = document.querySelector("#celsius");
-cDegrees.addEventListener("click", celDegrees);
-
 function fahDegrees(event) {
   event.preventDefault();
-  let mTemp = document.querySelector(".main-temperature");
-  mTemp.innerHTML = "73°";
+  let tempElement = document.querySelector("#tempElement");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
 }
+
+function celDegrees(event) {
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let tempElement = document.querySelector("#tempElement");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
 
 let fDegrees = document.querySelector("#fahrenheit");
 fDegrees.addEventListener("click", fahDegrees);
+
+let cDegrees = document.querySelector("#celsius");
+cDegrees.addEventListener("click", celDegrees);
 
 let h2 = document.querySelector(".dateTime");
 let now = new Date();
