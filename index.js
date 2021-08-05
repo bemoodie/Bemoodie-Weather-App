@@ -43,6 +43,9 @@ function formatDate(todaysDate) {
 function showWeather(response) {
   let iconElement = document.querySelector("#icon");
 
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+
   celsiusTemp = response.data.main.temp;
 
   document.querySelector("#city").innerHTML = response.data.name;
