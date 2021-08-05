@@ -67,10 +67,10 @@ p {
 .col {
   text-align: center;
 }
-.main {
+#icon {
   display: block;
   text-align: center;
-  font-size: 175px;
+  max-width: 100%;
   color: aliceblue;
   background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   border: 3px solid none;
