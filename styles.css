@@ -50,7 +50,7 @@ p {
   display: block;
   margin: 0 auto;
   text-align: center;
-  font-size: 100px;
+  font-size: 90px;
 }
 .cf {
   margin-top: 20px;
@@ -76,7 +76,7 @@ p {
   border: 3px solid none;
   border-radius: 700px;
   padding: 50px;
-  margin: 30px 0 10px;
+  margin: 30px 0 0px;
 }
 .days {
   background: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
