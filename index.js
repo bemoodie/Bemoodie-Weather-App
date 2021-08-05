@@ -40,6 +40,34 @@ function formatDate(todaysDate) {
   return `${day} | ${month} ${date},${year} | ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["thu", "fri", "sat", "sun", "mon", "tues", "wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          
+            <div class="col days">
+              <p class="weekDay">Fri</p>
+              <img
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                alt=""
+                class="wfIcon"
+              />
+              <br />
+              <p class="dayTemp">81°F</p>
+            </div>
+          
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   let iconElement = document.querySelector("#icon");
 
@@ -136,3 +164,4 @@ let currentButton = document.querySelector("#current");
 currentButton.addEventListener("click", showCurrentLoaction);
 
 search("New york");
+displayForecast();
