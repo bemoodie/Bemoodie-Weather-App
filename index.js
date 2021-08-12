@@ -63,9 +63,7 @@ function displayForecast(response) {
             <div class="col days">
               <p class="weekDay">${formatDay(forecastDay.dt)}</p>
               <img
-                src="http://openweathermap.org/img/wn/${
-                  forecastDay.weather[0].icon
-                }@2x.png"
+                src="icons/${forecastDay.weather[0].icon}.png"
                 alt=""
                 class="wfIcon"
               />
@@ -105,10 +103,7 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  iconElement.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  iconElement.setAttribute("src", `icons/${response.data.weather[0].icon}.png`);
   getForecast(response.data.coord);
 }
 
