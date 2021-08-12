@@ -27,6 +27,7 @@ p {
 .container {
   display: block;
   margin: 0 auto;
+  font-family: Comfortaa;
 }
 .border {
   background: radial-gradient(
