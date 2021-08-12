@@ -68,7 +68,7 @@ function displayForecast(response) {
                 class="wfIcon"
               />
               <br />
-              <p class="dayTemp">${Math.round(forecastDay.temp.max)}°</p>
+              <p class="dayTemp">${Math.round(forecastDay.temp.max)}°F</p>
             </div>
           
         `;
@@ -82,16 +82,13 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "70ac119e9673d8efaba7774f355454f6";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
   let iconElement = document.querySelector("#icon");
-
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
 
   celsiusTemp = response.data.main.temp;
 
@@ -109,7 +106,7 @@ function showWeather(response) {
 
 function search(city) {
   let apiKey = "70ac119e9673d8efaba7774f355454f6";
-  let units = "metric";
+  let units = "imperial";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeather);
 }
@@ -144,30 +141,7 @@ function showCurrentLoaction(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function fahDegrees(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#tempElement");
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function celDegrees(event) {
-  event.preventDefault();
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
-  let tempElement = document.querySelector("#tempElement");
-  tempElement.innerHTML = Math.round(celsiusTemp);
-}
-
 let celsiusTemp = null;
-
-let fDegrees = document.querySelector("#fahrenheit");
-fDegrees.addEventListener("click", fahDegrees);
-
-let cDegrees = document.querySelector("#celsius");
-cDegrees.addEventListener("click", celDegrees);
 
 let h2 = document.querySelector(".dateTime");
 let now = new Date();
