@@ -118,9 +118,12 @@ function handleSubmit(event) {
 
   let searchInput = document.querySelector("#exampleInputEmail1");
   let h1 = document.querySelector("h1");
+  let h2 = document.querySelector(".dateTime");
+  let now = new Date();
 
   if (searchInput.value) {
     h1.innerHTML = `${searchInput.value}`;
+    h2.innerHTML = formatDate(now);
   } else {
     h1.innerHTML = null;
     alert("Please enter a City");
