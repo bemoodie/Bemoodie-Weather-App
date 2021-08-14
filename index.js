@@ -1,4 +1,5 @@
-function formatDate(todaysDate) {
+function formatDate() {
+  let now = new Date();
   let date = now.getDate();
   let hours = now.getHours();
   if (hours < 10) {
@@ -118,12 +119,10 @@ function handleSubmit(event) {
 
   let searchInput = document.querySelector("#exampleInputEmail1");
   let h1 = document.querySelector("h1");
-  let h2 = document.querySelector(".dateTime");
-  let now = new Date();
 
   if (searchInput.value) {
     h1.innerHTML = `${searchInput.value}`;
-    h2.innerHTML = formatDate(now);
+    h2.innerHTML = formatDate();
   } else {
     h1.innerHTML = null;
     alert("Please enter a City");
@@ -147,8 +146,7 @@ function showCurrentLoaction(event) {
 let celsiusTemp = null;
 
 let h2 = document.querySelector(".dateTime");
-let now = new Date();
-h2.innerHTML = formatDate(now);
+h2.innerHTML = formatDate();
 
 let form = document.querySelector("#search-form");
 
